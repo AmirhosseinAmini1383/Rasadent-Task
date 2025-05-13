@@ -1,7 +1,26 @@
-export default function Home() {
+import { getProductsApi } from "@/services/productService";
+import Search from "@/ui/Search";
+import { toPersianDigits } from "@/utils/numberFormatter";
+import queryString from "query-string";
+import ProductsList from "./_/components/ProductsList";
+
+export default async function Home({ searchParams }) {
+  const queries = queryString.stringify(searchParams);
+  const products = await getProductsApi(queries);
+  const { q } = searchParams;
+
   return (
-    <div className="text-center text-2xl font-bold text-white bg-red-500">
-      سلام
+    <div className="container xl:max-w-screen-xl mx-auto px-4 mt-8">
+      <Search />
+      {q ? (
+        <p className="my-6 text-secondary-700">
+          {products.length === 0
+            ? "هیچ پستی با این مشخصات پیدا نشد"
+            : ` نمایش ${toPersianDigits(products.length)} نتیجه برای `}
+          <span className="font-bold">&quot;{q}&quot;</span>
+        </p>
+      ) : null}
+      <ProductsList products={products} />
     </div>
   );
 }
