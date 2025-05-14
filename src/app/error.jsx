@@ -7,7 +7,7 @@ function error({ error, reset }) {
           <p className="text-xl font-bold text-red-500 mb-8">{error.message}</p>
           <button
             onClick={reset}
-            className="flex items-center gap-x-2 text-secondary-300"
+            className="flex items-center gap-x-2 text-secondary-300 font-bold"
           >
             تلاش مجدد
           </button>
