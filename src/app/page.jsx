@@ -1,26 +1,16 @@
-import { getProductsApi } from "@/services/productService";
-import Search from "@/ui/Search";
-import queryString from "query-string";
-import ProductsList from "./_/components/ProductsList";
-import { toPersianNumbers } from "@/utils/toPersianNumbers";
+import Sliders from "./_components/Sliders";
 
-export default async function Home({ searchParams }) {
-  const queries = queryString.stringify(await searchParams);
-  const products = await getProductsApi(queries);
-  const { q } = await searchParams;
+export const metadata = {
+  title: "خانه - رسادنت",
+};
 
+export default async function Home() {
   return (
     <div className="container xl:max-w-screen-xl mx-auto px-4 mt-8">
-      <Search />
-      {q ? (
-        <p className="my-6 text-secondary-700">
-          {products.length === 0
-            ? "هیچ محصولی با این مشخصات پیدا نشد"
-            : ` نمایش ${toPersianNumbers(products.length)} نتیجه برای `}
-          <span className="font-bold">&quot;{q}&quot;</span>
-        </p>
-      ) : null}
-      <ProductsList products={products} />
+      <h1 className="text-secondary-400 font-black md:text-xl mb-10">
+        برای نمایش و سرچ محصولات لطفا به صفحه <span>محصولات</span> بروید.
+      </h1>
+      <Sliders />
     </div>
   );
 }

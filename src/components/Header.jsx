@@ -11,7 +11,7 @@ function Header() {
     {
       id: 2,
       children: "محصولات",
-      path: "/blogs",
+      path: "/products",
     },
   ];
   return (
