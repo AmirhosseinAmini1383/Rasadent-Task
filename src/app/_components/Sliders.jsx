@@ -46,7 +46,7 @@ function Sliders() {
         src={slides[currentIndex].imageSrc}
         alt="اسلایدر"
         fill
-        className="object-cover object-center rounded-2xl transition-all duration-500"
+        className="object-cover object-center rounded-2xl"
       />
 
       <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-secondary-700 text-white cursor-pointer">

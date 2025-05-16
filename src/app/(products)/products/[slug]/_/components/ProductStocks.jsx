@@ -1,10 +1,18 @@
+import Button from "@/ui/Button";
 import {
   toPersianNumbers,
   toPersianNumbersWithComma,
 } from "@/utils/toPersianNumbers";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 
-function ProductStocks({ stocks, selectedVariant, handleSelectedVariant }) {
+function ProductStocks({
+  stocks,
+  variants,
+  selectedVariant,
+  handleSelectedVariant,
+}) {
+  const variantValue = variants[0]?.title;
+
   return (
     <div className="col-span-12 mt-4 bg-gray-100 p-4 rounded-md">
       <div>
@@ -18,20 +26,22 @@ function ProductStocks({ stocks, selectedVariant, handleSelectedVariant }) {
                 <div
                   key={item.id}
                   className={`flex flex-col md:flex-row items-start justify-start md:items-center md:justify-between my-2 space-y-2 bg-secondary-0 border-[3px] border-secondary-10 rounded-lg p-4 ${
-                    selectedVariant === item.variants.رنگ
+                    selectedVariant === item.variants[variantValue]
                       ? "border-secondary-300"
                       : null
                   }`}
                 >
                   <div className="flex flex-col items-start justify-start font-medium">
                     <p className="text-secondary-300 md:text-lg mb-1">
-                      {item.shop_title}
+                      {item?.shop_title}
                     </p>
                     <p className="text-gray-400 text-xs flex items-center justify-center gap-x-1">
                       <span>
                         <InformationCircleIcon className="w-3 h-3 text-gray-400" />
                       </span>
-                      <span>رنگ: {item.variants.رنگ}</span>
+                      <span>
+                        {variantValue}: {item.variants[variantValue]}
+                      </span>
                     </p>
                   </div>
                   <div>
@@ -49,13 +59,13 @@ function ProductStocks({ stocks, selectedVariant, handleSelectedVariant }) {
                     </p>
                   </div>
 
-                  <button
-                    className="w-full md:w-40 bg-secondary-300 hover:bg-secondary-400 transition-all duration-150 ease-in text-white mt-6 md:mt-0 p-3 rounded-xl"
+                  <Button
+                    className="md:w-40"
                     onClick={() => handleSelectedVariant(item.variants.رنگ)}
                   >
                     {" "}
                     انتخاب
-                  </button>
+                  </Button>
                 </div>
               );
             })

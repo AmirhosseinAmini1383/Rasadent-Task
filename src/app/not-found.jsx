@@ -15,7 +15,7 @@ function NotFound() {
             </p>
             <button
               onClick={moveBack}
-              className="flex items-center gap-x-2 text-secondary-500"
+              className="flex items-center gap-x-2 bg-secondary-0 py-2 px-4 rounded-md font-bold text-secondary-700"
             >
               <ArrowRightIcon className="w-6 h-6 text-primary-900" />
               <span> برگشت</span>

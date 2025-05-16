@@ -8,7 +8,7 @@ function ProductImage({ images, name_fa }) {
           src={images[0].original_url}
           alt={name_fa}
           fill
-          className="object-cover object-center hover:scale-105 transition-all duration-300 ease-out rounded-lg border border-secondary-10"
+          className="object-cover object-center hover:scale-105 transition-all duration-300 ease-out rounded-lg border border-secondary-300"
         />
       ) : (
         <Image

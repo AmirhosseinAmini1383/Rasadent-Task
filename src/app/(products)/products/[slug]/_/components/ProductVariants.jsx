@@ -3,7 +3,7 @@ import { toPersianNumbers } from "@/utils/toPersianNumbers";
 function ProductVariants({ variants, selectedVariant, handleSelectedVariant }) {
   return (
     <div>
-      {variants.length ? (
+      {variants.length > 0 ? (
         <div className="bg-gray-100 p-4 lg:p-1.5 rounded-md lg:w-[500px]">
           <p className="font-bold text-secondary-400 text-xl mb-2">
             {variants[0]?.title}

@@ -22,7 +22,7 @@ async function page({ searchParams }) {
       {q ? (
         <p className="my-6 text-secondary-700">
           {products.length === 0
-            ? "هیچ محصولی با این مشخصات پیدا نشد"
+            ? "هیچ محصولی با این مشخصات پیدا نشد "
             : ` نمایش ${toPersianNumbers(products.length)} نتیجه برای `}
           <span className="font-bold">&quot;{q}&quot;</span>
         </p>
