@@ -1,6 +1,7 @@
 const btnType = {
-  primary: "bg-secondary-300 hover:bg-secondary-400",
-  secondary: "bg-secondary-150",
+  primary:
+    "border-[3px] border-secondary-300 bg-secondary-300 hover:bg-secondary-400",
+  secondary: "border-[3px] border-secondary-150 !text-secondary-150 font-bold",
   outline: "",
 };
 

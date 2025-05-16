@@ -20,7 +20,7 @@ function Product({ data }) {
       <ProductDetails
         selectedVariant={selectedVariant}
         handleSelectedVariant={handleSelectedVariant}
-        {...data}
+        data={data}
       />
       <ProductStocks
         {...data}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import NavLink from "./NavLink";
+import CartBadge from "./CartBadge";
 
 function Header() {
   const navLinks = [
@@ -28,6 +29,7 @@ function Header() {
             })}
           </div>
           <div className="flex items-center gap-x-2">
+            <CartBadge />
             <p className="font-black">رسادنت</p>
             <Image src="/images/logo.webp" width="28" height="28" alt="logo" />
           </div>

@@ -60,7 +60,7 @@ function ProductStocks({
                   </div>
 
                   <Button
-                    className="md:w-40"
+                    className="md:w-40 !m-0"
                     onClick={() => handleSelectedVariant(item.variants.رنگ)}
                   >
                     {" "}
